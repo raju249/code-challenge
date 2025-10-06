@@ -24,12 +24,13 @@ carousel:
     - 'src'
 
 grid:
-  container: 'div[data-layout="grid"]'
-  item: 'div.grid-item'
-  name: 'h3'
+  container: 'div.JCZQSb'
+  item: 'div.PZPZlf'
+  name: 'div.JjtOHd'
   link: 'a'
-  extensions: 'span'
+  extensions: 'div.AqEFvb'
   image: 'img'
+  image_container: 'div.d7ENZc'
   image_attrs:
     - 'src'
     - 'data-src'

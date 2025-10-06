@@ -17,10 +17,12 @@ module GoogleCarouselParser
       end
 
       begin
-        items = Parser.parse_file(file_path)
+        result = Parser.parse_file_with_metadata(file_path)
+        items = result[:items]
+        collection_name = result[:collection_name]
 
         output = {
-          artworks: items.map(&:to_h)
+          collection_name.to_sym => items.map(&:to_h)
         }
 
         puts JSON.pretty_generate(output)

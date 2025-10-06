@@ -14,12 +14,31 @@ module GoogleCarouselParser
       name.split('::').last.gsub('Strategy', '').downcase
     end
 
+    def self.collection_name(doc)
+      # Try to extract collection name from HTML
+      container = doc.at_css('div.adDDi')
+      if container
+        text_element = container.at_css('span.mgAbYb')
+        if text_element
+          text = text_element.text.strip.downcase.gsub(/\s+/, '_')
+          return text unless text.empty?
+        end
+      end
+
+      # Fallback to default
+      default_collection_name
+    end
+
+    def self.default_collection_name
+      'items'
+    end
+
     def self.selectors
       @selectors ||= load_selectors
     end
 
     def self.load_selectors
-      config_path = File.expand_path('../../../config/selectors.yml', __FILE__)
+      config_path = File.expand_path('../../../../config/selectors.yml', __FILE__)
       config = YAML.load_file(config_path)
       config[strategy_name]
     rescue => e
