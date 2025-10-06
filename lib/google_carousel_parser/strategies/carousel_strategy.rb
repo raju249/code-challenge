@@ -1,5 +1,3 @@
-require 'yaml'
-
 module GoogleCarouselParser
   class CarouselStrategy < BaseStrategy
     BASE_URL = 'https://www.google.com'
@@ -144,28 +142,15 @@ module GoogleCarouselParser
         @image_map[img_id]
       end
 
-      def selectors
-        @selectors ||= load_selectors
-      end
-
-      def load_selectors
-        config_path = File.expand_path('../../../../config/selectors.yml', __FILE__)
-        config = YAML.load_file(config_path)
-        config['carousel']
-      rescue => e
-        warn "Failed to load selectors: #{e.message}. Using defaults."
-        default_selectors
-      end
-
       def default_selectors
         {
-          'container' => 'g-scrolling-carousel',
-          'item' => 'g-scrolling-carousel > div',
-          'name' => 'h3',
+          'container' => 'div.Cz5hV',
+          'item' => 'div.iELo6',
+          'name' => 'div.pgNMRc',
           'link' => 'a',
-          'extensions' => 'span',
-          'image' => 'img',
-          'image_attrs' => ['src', 'data-src', 'data-iml']
+          'extensions' => 'div.cxzHyb',
+          'image' => 'img.taFZJe',
+          'image_attrs' => ['data-src', 'src']
         }
       end
     end
