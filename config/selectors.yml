@@ -1,0 +1,46 @@
+# CSS Selectors for Google Carousel Parser
+
+carousel:
+  # Container element that wraps the entire carousel
+  container: 'div.Cz5hV'
+
+  # Individual carousel items (repeating pattern)
+  item: 'div.iELo6'
+
+  # Name/title of the item (within each item)
+  name: 'div.pgNMRc'
+
+  # Link element (within each item)
+  link: 'a'
+
+  # Extensions (dates, metadata) - may be multiple
+  extensions: 'div.cxzHyb'
+
+  # Image element
+  image: 'img.taFZJe'
+
+  image_attrs:
+    - 'data-src'
+    - 'src'
+
+grid:
+  container: 'div[data-layout="grid"]'
+  item: 'div.grid-item'
+  name: 'h3'
+  link: 'a'
+  extensions: 'span'
+  image: 'img'
+  image_attrs:
+    - 'src'
+    - 'data-src'
+
+mosaic:
+  container: 'div[data-layout="mosaic"]'
+  item: 'div.mosaic-item'
+  name: 'h3'
+  link: 'a'
+  extensions: 'span'
+  image: 'img'
+  image_attrs:
+    - 'src'
+    - 'data-src'
