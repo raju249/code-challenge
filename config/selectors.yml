@@ -34,14 +34,3 @@ grid:
   image_attrs:
     - 'src'
     - 'data-src'
-
-mosaic:
-  container: 'div[data-layout="mosaic"]'
-  item: 'div.mosaic-item'
-  name: 'h3'
-  link: 'a'
-  extensions: 'span'
-  image: 'img'
-  image_attrs:
-    - 'src'
-    - 'data-src'
