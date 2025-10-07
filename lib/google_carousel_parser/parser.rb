@@ -4,8 +4,7 @@ module GoogleCarouselParser
   class Parser
     STRATEGIES = [
       CarouselStrategy,
-      GridStrategy,
-      MosaicStrategy
+      GridStrategy
     ].freeze
 
     class << self
